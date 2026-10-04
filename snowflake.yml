@@ -1,0 +1,13 @@
+definition_version: 2
+entities:
+  bankguard_dashboard:
+    type: streamlit
+    identifier:
+      name: BANKGUARD_DASHBOARD
+    title: "BANKGUARD AI - Risk Intelligence Command Center"
+    query_warehouse: COMPUTE_WH
+    main_file: app.py
+    artifacts:
+      - streamlit/
+    meta:
+      use_mixins: false

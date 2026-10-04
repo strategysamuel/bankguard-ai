@@ -1,0 +1,7 @@
+name: bankguard-ai
+channels:
+  - snowflake
+dependencies:
+  - snowflake-snowpark-python
+  - altair
+  - streamlit
