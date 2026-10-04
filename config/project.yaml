@@ -1,0 +1,43 @@
+project:
+  name: BANKGUARD AI
+  purpose: >
+    Risk, Fraud & Regulatory Intelligence Copilot for Banking and NBFC teams.
+    Transforms transaction and account activity into evidence-backed,
+    policy-grounded, audit-ready decisions.
+  hackathon: Snowflake CoCo CLI Hackathon – GCC Edition
+  organizer: hack2skill
+
+snowflake:
+  database: BANKGUARD_DB            # Standard DB (personal DB cannot host tables)
+  warehouse: COMPUTE_WH
+  schemas:
+    raw: BANKGUARD_RAW          # Synthetic banking transactions, accounts, customers
+    core: BANKGUARD_CORE        # Cleansed and enriched data models
+    risk: BANKGUARD_RISK        # Risk scoring, fraud detection, AML analytics
+    regulatory: BANKGUARD_REGULATORY  # Regulatory knowledge base, policies
+    audit: BANKGUARD_AUDIT      # Investigation findings, audit trails, AI decision logs
+
+environment:
+  data_policy: synthetic-only   # All banking data is synthetic; no real PII or transactions
+  connection: Snowflake CoCo CLI native connection
+  compute: Serverless where available; COMPUTE_WH for warehouse workloads
+
+ai_governance:
+  principles:
+    - Deterministic risk rules must precede LLM reasoning.
+    - AI explanations must be grounded in available evidence.
+    - Policy references must identify the applicable policy and version.
+    - Never invent evidence, transactions, regulations, or findings.
+    - If evidence is insufficient, return "Insufficient evidence to support this finding."
+    - AI must not automatically freeze accounts, file regulatory reports, declare criminal activity, or make irreversible decisions.
+    - Human analyst approval is required for consequential decisions.
+    - Maintain auditability of all AI-generated findings.
+
+development_phases:
+  M0: Project Foundation – repo structure, Snowflake schemas, governance docs
+  M1: Synthetic Data – realistic banking dataset generation
+  M2: Risk Engine – deterministic scoring and fraud detection rules
+  M3: Regulatory Knowledge – policy ingestion and Cortex Search
+  M4: AI Investigation – Cortex Agent with evidence-grounded reasoning
+  M5: Streamlit Dashboard – interactive analyst interface
+  M6: Polish & Demo – end-to-end validation and presentation
