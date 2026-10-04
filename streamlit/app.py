@@ -397,8 +397,8 @@ personal identifiers are used at any point.
 | M2 - Risk Engine | Complete |
 | M3 - Regulatory Knowledge | Complete |
 | M4 - AI Investigation | Complete |
-| M5 - Streamlit Dashboard | Current |
-| M6 - Polish & Demo | Pending |
+| M5 - Streamlit Dashboard | Complete |
+| M6 - Polish & Demo | Complete |
 """)
 
 

@@ -2,15 +2,15 @@
 
 ## Phase Overview
 
-| Phase | Name                    | Description                                         |
-|-------|-------------------------|-----------------------------------------------------|
-| M0    | Project Foundation      | Repo structure, Snowflake schemas, governance docs   |
-| M1    | Synthetic Data          | Generate realistic banking dataset                   |
-| M2    | Risk Engine             | Deterministic scoring and fraud detection rules      |
-| M3    | Regulatory Knowledge    | Policy ingestion and Cortex Search                   |
-| M4    | AI Investigation        | Cortex Agent with evidence-grounded reasoning        |
-| M5    | Streamlit Dashboard     | Interactive analyst interface                        |
-| M6    | Polish & Demo           | End-to-end validation, demo preparation              |
+| Phase | Name                    | Description                                         | Status   |
+|-------|-------------------------|-----------------------------------------------------|----------|
+| M0    | Project Foundation      | Repo structure, Snowflake schemas, governance docs   | Complete |
+| M1    | Synthetic Data          | Generate realistic banking dataset                   | Complete |
+| M2    | Risk Engine             | Deterministic scoring and fraud detection rules      | Complete |
+| M3    | Regulatory Knowledge    | Policy ingestion and Cortex Search                   | Complete |
+| M4    | AI Investigation        | Cortex Agent with evidence-grounded reasoning        | Complete |
+| M5    | Streamlit Dashboard     | Interactive analyst interface                        | Complete |
+| M6    | Polish & Demo           | End-to-end validation, demo preparation              | Complete |
 
 ## M0 – Project Foundation
 
@@ -65,10 +65,11 @@
 
 ## M6 – Polish & Demo
 
-- End-to-end workflow validation
-- Performance review
-- Demo scenario preparation
-- Documentation finalization
+- End-to-end validation SQL (all 9 scenarios at 100% detection, hero case assertions)
+- Documentation finalization (DATA_MODEL.md, ARCHITECTURE.md, DEVELOPMENT_PLAN.md)
+- Dashboard About page updated to reflect all phases complete
+- Project README for hackathon submission
+- Demo scenario: CUST-1042 golden path through all 5 dashboard views
 
 ## Constraints
 

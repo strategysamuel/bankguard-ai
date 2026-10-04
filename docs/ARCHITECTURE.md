@@ -72,8 +72,22 @@ run inside Snowflake. The analyst interface is a Streamlit-in-Snowflake applicat
 |-------------------|-----------------------------------|
 | Data storage      | Snowflake (BANKGUARD_DB)          |
 | Compute           | COMPUTE_WH                        |
-| Risk engine       | Snowflake SQL                     |
-| Regulatory search | Cortex Search                     |
-| AI reasoning      | Cortex Agent + Cortex LLM         |
+| Risk engine       | Snowflake SQL (9 signal detectors)|
+| Regulatory search | Cortex Search Service             |
+| Text-to-SQL       | Cortex Analyst + Semantic View    |
+| AI orchestration  | Cortex Agent (Analyst + Search)   |
 | Dashboard         | Streamlit in Snowflake            |
 | Orchestration     | Snowflake CoCo CLI                |
+
+## Data Volumes
+
+| Category            | Count   |
+|---------------------|---------|
+| Customers           | 1,001   |
+| Accounts            | 1,558   |
+| Beneficiaries       | 2,564   |
+| Transactions        | 95,607  |
+| Risk signals        | 843     |
+| Scored customers    | 492     |
+| Policy sections     | 23      |
+| Investigation cases | 151     |
