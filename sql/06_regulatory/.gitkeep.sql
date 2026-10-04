@@ -1,2 +1,0 @@
--- BANKGUARD AI – Regulatory Knowledge
--- Placeholder: Policy ingestion SQL will be added in M3.

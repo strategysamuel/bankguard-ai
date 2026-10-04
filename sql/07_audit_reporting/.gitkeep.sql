@@ -1,2 +1,0 @@
--- BANKGUARD AI – Audit / Reporting
--- Placeholder: Audit trail and reporting SQL will be added in M4–M5.
