@@ -4,9 +4,13 @@ entities:
     type: streamlit
     identifier:
       name: BANKGUARD_DASHBOARD
+      database: BANKGUARD_DB
+      schema: PUBLIC
     title: "BANKGUARD AI - Risk Intelligence Command Center"
     query_warehouse: COMPUTE_WH
-    main_file: app.py
+    runtime_name: SYSTEM$ST_CONTAINER_RUNTIME_PY3_11
+    compute_pool: SYSTEM_COMPUTE_POOL_CPU
+    main_file: streamlit/app.py
     artifacts:
       - streamlit/
     meta:

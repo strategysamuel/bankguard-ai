@@ -23,3 +23,9 @@ Thumbs.db
 # Temp
 *.tmp
 *.log
+
+# Build output
+output/
+
+# CoCo session artifacts
+.cortex/
