@@ -26,12 +26,17 @@ for node in ast.walk(tree):
             assert "session_state" in body
             print(f"  _consume: line {node.lineno}, {node.end_lineno - node.lineno + 1} lines — FROZEN OK")
 
-nav_calls = len(re.findall(r"navigate_to\(", src))
 nav_def = len(re.findall(r"def navigate_to\(", src))
-nav_invocations = nav_calls - nav_def
-print(f"  navigate_to: {nav_def} def + {nav_invocations} calls = {nav_calls} total")
-if nav_invocations != 14:
-    errors.append(f"navigate_to call count: {nav_invocations}, expected 14")
+nav_code_calls = 0
+for ln in src.splitlines():
+    stripped = ln.strip()
+    if stripped.startswith("#"):
+        continue
+    if "navigate_to(" in stripped and "def navigate_to(" not in stripped:
+        nav_code_calls += 1
+print(f"  navigate_to: {nav_def} def + {nav_code_calls} code calls")
+if nav_code_calls != 14:
+    errors.append(f"navigate_to call count: {nav_code_calls}, expected 14")
 
 ss_keys = re.findall(r'\("(nav_\w+)",', src)
 unique_keys = sorted(set(ss_keys))

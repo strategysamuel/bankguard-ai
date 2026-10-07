@@ -318,6 +318,7 @@ def navigate_to(page, customer=None, case=None, policy=None,
     st.session_state["nav_risk_class"] = risk_class
     st.session_state["nav_signal_type"] = signal_type
     st.session_state["nav_search"] = search
+    st.session_state["_nav_pending"] = True
     st.rerun()
 
 
@@ -333,6 +334,14 @@ def _consume(key):
 st.sidebar.title("BANKGUARD AI")
 st.sidebar.caption("Risk, Fraud & Regulatory Intelligence Copilot")
 st.sidebar.divider()
+
+# Resolve programmatic navigation BEFORE the radio widget renders.
+# When navigate_to() is called, it sets _nav_pending=True and nav_page to
+# the target. We must write that target into the radio widget's own key
+# so that Streamlit's internal widget state agrees with nav_page.
+if st.session_state.get("_nav_pending"):
+    st.session_state["_nav_radio"] = st.session_state["nav_page"]
+    st.session_state["_nav_pending"] = False
 
 page = st.sidebar.radio(
     "Navigation",
